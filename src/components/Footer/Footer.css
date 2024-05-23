@@ -1,0 +1,15 @@
+footer {
+    background-color: #383A39;
+    height: 200px;
+    
+}
+.footer-container {
+    max-width: 1200px;
+    margin-inline: auto;
+    display: flex;
+    height: inherit;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 10px; */
+
+}

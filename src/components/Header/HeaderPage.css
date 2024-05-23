@@ -1,0 +1,16 @@
+header {
+    background-image: linear-gradient(to right, #191C1B, #151F1E);
+    height: 536px;
+    width: 100%;
+}
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container-one {
+    display: flex;
+    /* gap: ; */
+}

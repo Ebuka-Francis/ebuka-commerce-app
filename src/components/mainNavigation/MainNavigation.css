@@ -1,0 +1,33 @@
+nav {
+    background-color: #000;
+}
+.logo {
+    color: #fff;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    max-width: 1200px;
+    margin-inline: auto ;
+    padding: 10px;
+}
+.nav-one {
+    display: flex;
+    gap: 40px;
+ 
+}
+.nav-one a {
+    color: #fff;
+    text-decoration: none;
+}
+.nav-one a:hover {
+    color: #3FC79A;
+    border-bottom: 1px solid #3FC79A;
+}
+.profile-nav {
+    display: flex;
+    gap: 60px;
+    padding-right: 70px;
+}

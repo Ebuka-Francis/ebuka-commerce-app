@@ -1,0 +1,13 @@
+.logo h1 {
+    font-size: 30px;
+    margin: 0px;
+}
+.logo p {
+    font-size: 20px;
+    margin: 0px;
+}
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
