@@ -1,7 +1,7 @@
 import React from 'react';
 import "./HeaderPage.css";
 import Headerimg from './Headerimg';
-import Logo from '../UI/Logo';
+import Logo from '../UI/logo/Logo';
 
 export default function HeaderPage() {
   return (

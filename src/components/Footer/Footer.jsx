@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import Logo from '../UI/Logo';
+import Logo from '../UI/logo/Logo';
 import PageNav from '../mainNavigation/PageNav';
 
 export default function Footer() {
