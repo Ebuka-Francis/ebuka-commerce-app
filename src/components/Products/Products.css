@@ -25,6 +25,7 @@ img {
 .products {
     max-width: 1200px;
     margin-inline: auto;
+    margin-block: 30px;
 }
 /* .product-info {
     padding: 5px;

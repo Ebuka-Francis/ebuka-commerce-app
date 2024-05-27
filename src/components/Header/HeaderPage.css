@@ -14,3 +14,8 @@ header {
     display: flex;
     /* gap: ; */
 }
+p {
+  color: #fff;
+  margin: 0px;
+  text-transform: capitalize;
+}

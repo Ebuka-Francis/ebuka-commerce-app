@@ -7,7 +7,7 @@ export default function PageNav() {
   return (
     <div className="nav-one">
         <Link href='/'> Home </Link>
-        <Link href='/product'> Product </Link>
+        <Link href='/product-page'> Product </Link>
       </div>
   )
 }
