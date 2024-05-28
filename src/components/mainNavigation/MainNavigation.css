@@ -28,6 +28,10 @@ nav {
     color: #3FC79A;
     border-bottom: 1px solid #3FC79A;
 }
+.active {
+    color: #3FC79A;
+    border-bottom: 1px solid #3FC79A;
+}
 .profile-nav {
     display: flex;
     gap: 60px;

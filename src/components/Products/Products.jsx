@@ -15,6 +15,7 @@ export default function Products() {
       <div className="prods">
         {PRODUCTS.map((item) => (
           <ProductsInfo
+             itm={item}
             images={item.image}
             title={item.title}
             price={item.price}

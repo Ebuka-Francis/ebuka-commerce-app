@@ -19,13 +19,21 @@
   display: none;
 }
 .modals {
-    background-color: #fff;
+    background-color: #333;
     padding: 20px;
-    width: 40%;
+    width: 55%;
     border-radius: 10px;
+    /* height: 400px; */
 }
-button {
+.cancel-btn {
     cursor: pointer;
+    background-color: transparent;
+    color: #fff;
+    font-size: 30px;
+    border: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
 }
 /* .cancel-btn {
     height: ;

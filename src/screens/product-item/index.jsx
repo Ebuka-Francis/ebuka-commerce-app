@@ -2,18 +2,18 @@ import './productItem.css';
 
 export default function ProductItem({items}) {
     return <div className='product-item'>
-        <div>
+        <div className='product-img' >
       <img src={items.image} alt={items.alt} />
         </div>
-      <div>
+      <div className='product-typo'>
         <div>
         <h2>{items.title}</h2>
         <p>{items.price}</p>
         </div>
-        <button>Add to cart </button>
+        <button className='btn' >Add to cart </button>
 
-        <div>
-            <p>Description</p>
+        <div className='product-desc'>
+            <h4>Description</h4>
             <img src="/arrowImg.png" alt="" />
         </div>
         <p>{items.description}</p>
