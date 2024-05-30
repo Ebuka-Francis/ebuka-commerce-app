@@ -1,19 +1,23 @@
-nav {
-    background-color: #000;
-}
+
 .logo a {
     color: #fff;
+}
+.topnav {
+    background-color: #000;
+    width: 100%;
+    height: 70px;
+    position: sticky;
+    top: 0px;
 }
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: inherit;
     max-width: 1200px;
     margin-inline: auto ;
-    padding: 10px;
-    position: sticky;
-    top: 0px;
+    padding-inline: 5px;
+
 }
 .nav-one {
     display: flex;
