@@ -19,3 +19,14 @@ p {
   margin: 0px;
   text-transform: capitalize;
 }
+
+@media  screen and (max-width:800px) {
+  .headerimg {
+    display: none;
+
+  }
+  .container {
+    justify-content: center;
+    height: inherit;
+  }
+}

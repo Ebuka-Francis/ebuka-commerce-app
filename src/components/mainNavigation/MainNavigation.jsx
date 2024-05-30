@@ -13,8 +13,8 @@ const MainNavigation = () => {
      <Logo />
       {/* <div className="logo">Topibro</div> */}
       <div className="profile-nav">
-        <Link href='#'>Signup</Link>
-        <Link href='#'>Log in</Link>
+      
+        <Link href='/login'>Login</Link>
         {/* <Link href='#'><img src='/cartimg.png' alt="cartimages" /></Link> */}
         {/* <Link href='#'><img src='/profileimg.png' alt="cartimages" /></Link> */}
       </div>

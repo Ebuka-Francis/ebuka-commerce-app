@@ -35,6 +35,9 @@ label {
     align-items: center;
     gap: 10px;
 }
+.logo a {
+    text-decoration: none;
+}
 .bord {
     border-bottom: 2px solid grey;
     width: 200px;

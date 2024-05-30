@@ -30,7 +30,7 @@ export const PRODUCTS = [
         listitem2: 'Timeless Design: The classic Oxford weave adds texture and dimension to this shirt, making it suitable for both formal and casual occasions.'
     },
     {
-        image: '/Men-designers-round.webp',
+        image: '/Rounded-neck-Tshirt.webp',
         title: 'Men Designers',
         price: '5000', 
         alt: 'a product image',
@@ -94,7 +94,7 @@ export const PRODUCTSGEN = [
         listitem2: 'Timeless Design: The classic Oxford weave adds texture and dimension to this shirt, making it suitable for both formal and casual occasions.'
     },
     {
-        image: '/Men-designers-round.webp',
+        image: '/Rounded-neck-Tshirt.webp',
         title: 'Men Designers',
         price: '5000', 
         alt: 'a product image',

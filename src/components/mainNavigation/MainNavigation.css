@@ -1,7 +1,7 @@
 nav {
     background-color: #000;
 }
-.logo {
+.logo a {
     color: #fff;
 }
 nav {
@@ -23,6 +23,7 @@ nav {
 .nav-one a {
     color: #fff;
     text-decoration: none;
+    font-size: 14px;
 }
 .nav-one a:hover {
     color: #3FC79A;
@@ -44,6 +45,7 @@ nav {
     padding: 7px;
     border-radius: 5px;
     box-shadow:1px 1px 4px inset;
+    font-size: 14px;
 
 
 }

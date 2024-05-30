@@ -16,6 +16,7 @@ img {
 .product-page a {
     color: #3FC79A;
     text-decoration: none;
+    font-size: 14px;
 
 }
 
@@ -50,6 +51,9 @@ img {
 .prods {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    column-gap: 20px;
+    row-gap: 80px;
+    margin-top: 40px;
+    padding: 10px;
 
 }
