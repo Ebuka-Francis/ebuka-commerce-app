@@ -1,12 +1,11 @@
 'use client'
 import Link from 'next/link';
 import Input from '@/components/UI/input';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './signup.css';
 import Logo from '@/components/UI/logo/Logo';
 import Router from 'next/router';
 import firebase from 'firebase';
-// import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import initFirebase from '@/services/firebase';
