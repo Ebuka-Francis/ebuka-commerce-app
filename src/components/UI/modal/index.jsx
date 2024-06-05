@@ -4,12 +4,12 @@ import './modal.css';
 
 export default function Modal({open, onClose, children}) {
     
-   //  const handleClick = () => {
-   //      if (onClose) {
-   //          onClose();
-   //       }
+    const handleClick = () => {
+        if (onClose) {
+            onClose();
+         }
 
-   //  }
+    }
     useEffect(() => {
         if (open) {
            if (typeof window != 'undefined' && window.document) {
@@ -24,7 +24,7 @@ export default function Modal({open, onClose, children}) {
 
 
   return (
-    <div className={open ? 'modal-bckdrop' : 'modal-inactive'}>
+    <div className={open ? 'modal-bckdrop' : 'modal-inactive'} onClick={handleClick}>
         <button className="cancel-btn" onClick={onClose}>X</button>
     <div className='modals'>
         {children}

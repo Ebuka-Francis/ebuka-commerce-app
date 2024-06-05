@@ -1,10 +1,45 @@
+'use client'
 import Link from 'next/link';
 import Input from '@/components/UI/input';
-import React from 'react';
+import React, { useState } from 'react';
 import './signup.css';
 import Logo from '@/components/UI/logo/Logo';
+import Router from 'next/router';
+import firebase from 'firebase';
+// import firebase from 'firebase/app';
+import 'firebase/auth';
+
+import initFirebase from '@/services/firebase';
+
+initFirebase();
+
+
+const provider = new firebase.auth.GoogleAuthProvider(); 
+
 
 export default function SignupPage() {
+  const [authorizing, setAuthorizing] = useState(false);
+
+  const handleGoogleSigup = async () => {
+    setAuthorizing(true);
+    try {
+      const result = await firebase.auth().signInWithPopup(provider);
+      console.log('result', result);
+
+      const { user, credentials } = result;
+
+       console.log({user, credentials});
+
+       if(!user) {
+        throw new Error("There wa an issue authorizing")
+       }
+       Router.push("/");
+    }catch(error) {
+      console.log(error);
+    }
+    setAuthorizing(false);
+  };
+
   return (
     <div className='signup-style'>
         <Logo />
@@ -25,6 +60,7 @@ export default function SignupPage() {
       <div className="bord"></div>
 
     </div>
+    <button style={{background: 'blue', color: 'white', padding: '13px', borderRadius: '7px', border: 'none', cursor: 'pointer'}} loading={authorizing} onClick={handleGoogleSigup} >Signup with google</button>
     </div>
   )
 }
