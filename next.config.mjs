@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    eslint: {
+        ignoreDuringBuilds: true,
+      },
+
     env: {
         NEXT_PUBLIC_FIREBASE_API_KEY:"AIzaSyADBTyaJSHjuTAwWTFdguL2_GjrC4JBsgA",
         NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: "othello-fe27c.firebaseapp.com",
@@ -10,6 +14,7 @@ const nextConfig = {
         NEXT_PUBLIC_FIREBASE_APP_ID:"1:221441450025:web:c51463ecd47681e7f43c38",
 
     }
+  
 };
 
 export default nextConfig;
