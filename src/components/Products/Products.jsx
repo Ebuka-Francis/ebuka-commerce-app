@@ -19,6 +19,7 @@ export default function Products() {
             images={item.image}
             title={item.title}
             price={item.price}
+            key={item.id}
           />
         ))}
       </div>
