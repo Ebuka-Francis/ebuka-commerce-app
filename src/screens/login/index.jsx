@@ -17,7 +17,7 @@ export default function LoginPage() {
     </form>
     <div className='form-border'>
       <div className="bord"></div>
-        <Link href='/signup'>Signup</Link>
+        <Link href='/'>Signup</Link>
       <div className="bord"></div>
     </div>
     </div>

@@ -13,13 +13,13 @@ export default function Products() {
         <Link href="/product">See all</Link>
       </div>
       <div className="prods">
-        {PRODUCTS.map((item) => (
+        {PRODUCTS.map((item, idx) => (
           <ProductsInfo
              itm={item}
             images={item.image}
             title={item.title}
             price={item.price}
-            key={item.id}
+            key={idx}
           />
         ))}
       </div>

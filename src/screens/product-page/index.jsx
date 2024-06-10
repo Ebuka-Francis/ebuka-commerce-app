@@ -24,13 +24,13 @@ export default function ProductPage() {
           <Link href="/">Go Back</Link>
         </div>
         <div className="prods" >
-          {PRODUCTSGEN.map((item) => (
+          {PRODUCTSGEN.map((item, idx) => (
             <ProductsInfo
             itm={item}
               images={item.image}
               title={item.title}
               price={item.price}
-              key={item.id}
+              key={idx}
             />
           ))}
         </div>

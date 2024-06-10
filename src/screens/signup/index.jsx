@@ -8,9 +8,9 @@
 // import firebase from 'firebase';
 // import 'firebase/auth';
 
-// // import initFirebase from '@/services/firebase';
+// import initFirebase from '@/services/firebase';
 
-// // initFirebase();
+// initFirebase();
 
 
 // const provider = new firebase.auth.GoogleAuthProvider(); 
