@@ -1,6 +1,11 @@
+"use client"
+import useStore from '@/store/cartContext';
 import './productItem.css';
 
+
 export default function ProductItem({items}) {
+  const cartnumb = useStore((state) => state.increasePopulation)
+
     return <div className='product-item'>
         <div className='product-img' >
       <img src={items.image} alt={items.alt} />
@@ -10,7 +15,7 @@ export default function ProductItem({items}) {
         <h2>{items.title}</h2>
         <p>{items.price}</p>
         </div>
-        <button className='btn' >Add to cart </button>
+        <button className='btn' onClick={cartnumb} >Add to cart </button>
 
         <div className='product-desc'>
             <h4>Description</h4>

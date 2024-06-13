@@ -16,6 +16,7 @@ p {
     border: none;
     width: 100%;
     color: #fff;
+    cursor: pointer;
 }
 .product-typo {
     max-width: 370px;
