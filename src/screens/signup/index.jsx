@@ -12,10 +12,11 @@ import toast from "react-hot-toast";
 import initFirebase from "@/services/firebase";
 import { redirect } from "next/navigation";
 
+  initFirebase();
 
-
-initFirebase();
+  if (typeof window !== "undefined") {
 const provider = new firebase.auth.GoogleAuthProvider();
+  }
 
 export default function SignupPage() {
   // const Router = useRouter();
@@ -28,33 +29,30 @@ export default function SignupPage() {
       .signOut()
       .then(() => {
         console.log("signed out!!!");
-        toast.success('successfully logged out')
+        toast.success("successfully logged out");
       })
       .catch((error) => {
         console.error("error signing out", error);
-          toast.error("error signing out");
+        toast.error("error signing out");
       });
-      redirect("/");
+    redirect("/");
   };
-
-
 
   const handleGoogleSigup = async () => {
     setAuthorizing(true);
     try {
-      const result = await firebase.auth().signInWithPopup(provider);
-      console.log("result", result);
+        const result = await firebase.auth().signInWithPopup(provider);
+        console.log("result", result);
 
       const { user, credentials } = result;
 
       console.log({ user, credentials });
-      toast.success('Successfully loggedin!')
-
-    }catch (error) {
-        console.log("error signing in", error);
+      toast.success("Successfully loggedin!");
+    } catch (error) {
+      console.log("error signing in", error);
     }
     setAuthorizing(false);
-  }
+  };  
 
   return (
     <div className="signup-style">
