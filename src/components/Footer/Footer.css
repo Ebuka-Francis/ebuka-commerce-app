@@ -1,6 +1,9 @@
 footer {
     background-color: #383A39;
-    height: 200px;
+    height: 100px;
+    width: 100%;
+    position: sticky;
+    bottom: -10px;
     
 }
 .footer-container {

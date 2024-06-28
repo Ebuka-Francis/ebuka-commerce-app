@@ -1,0 +1,16 @@
+.cart-container {
+    border-radius: 8px;
+    max-width: 1200px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.cart-container h3 {
+  padding: 16px 24px 16px 24px ;
+  border-bottom:  1px solid #2A2A2A;
+}
+.carts {
+  width: 65%;
+  background-color: #9898980D;
+  color: #fff;
+}

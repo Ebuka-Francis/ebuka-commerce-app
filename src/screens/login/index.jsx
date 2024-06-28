@@ -10,7 +10,6 @@ export default function LoginPage() {
         <Logo />
         <h1>Log in</h1>
     <form>
-      <Input label='Username' type='text' htmlfor='username' inputClass='text-input'  />
       <Input label='Email' type='email' htmlfor='useremail' inputClass='text-input' />
       <Input label='Password' type='password' htmlfor='userpassword' inputClass='text-input' />
       <Input type='submit' value='Login' inputClass='submit' />
