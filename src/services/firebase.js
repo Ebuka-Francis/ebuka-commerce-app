@@ -1,7 +1,12 @@
-import firebase from "firebase/app";
+'use client';
+// import firebase from "firebase/app";   
+import firebase from 'firebase/app';
+import { initializeApp } from 'firebase/app';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import 'firebase/auth';
 import 'firebase/firestore';
-import 'firebase/storage';
+
+
 
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -10,9 +15,20 @@ const firebaseConfig = {
     projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,   
 }
 
-export default function initFirebase() {
-    // console.log(firebaseConfig)
-    if(!firebase.apps.length){
-        firebase.initializeApp(firebaseConfig);
-    }
-}
+
+export const initFirebase = initializeApp(firebaseConfig);
+// export default function initFirebase() {
+    // if(!firebase.apps.length){
+    //     firebase.initializeApp(firebaseConfig);
+    // }
+// }
+
+// export function auth() {
+//     if (typeof window !== 'undefined') {
+//         firebase.auth();
+//     }
+// }
+
+export const auth = getAuth(initFirebase);   
+export const googleProvider = new GoogleAuthProvider();
+

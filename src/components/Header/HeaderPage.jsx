@@ -1,21 +1,12 @@
 "use client"
 import React from 'react';
-import { useEffect } from 'react';
 import "./HeaderPage.css";
 import Headerimg from './Headerimg';
 import Logo from '../UI/logo/Logo';
-import useStore from '@/store/cartContext';
-// import CartItems from '../cart/cartitem';
-// import { PRODUCTS } from '@/data/Data';
+
 
 export default function HeaderPage() {
-  // const carts = useStore(state=>state.cartItems)
-  // const setCartItems = useStore(state=>state.setCartItems)
-  // console.log("CArt tmessdsfdsfdsfsffds>>>>>>>>>>>>", carts)
-  
-  // useEffect(()=>{
-  //   setCartItems([])
-  // },[])
+
   return (
     
   <header>

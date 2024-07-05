@@ -18,6 +18,14 @@ p {
     color: #fff;
     cursor: pointer;
 }
+.btn-dark {
+    background-color: grey;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;  
+}
 .product-typo {
     max-width: 370px;
     display: flex;

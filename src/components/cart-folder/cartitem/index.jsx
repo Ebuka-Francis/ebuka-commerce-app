@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import useStore from '@/store/cartContext';
 import './cartItems.css';

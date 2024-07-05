@@ -4,18 +4,33 @@ import "./MainNavigation.css";
 import PageNav from "./PageNav";
 import Logo from "../UI/logo/Logo";
 import useStore from "@/store/cartContext";
+import useAuth from "@/auth";
 import { useState } from "react";
-// import CartModal from "../cart-folder/cartModal";
+import { auth } from "@/services/firebase";
+import toast from "react-hot-toast";
+import { signOut } from "firebase/auth";
+import { useRouter } from "next/navigation";
 
 
-const MainNavigation = () => {
-  const cartnumb = useStore(state => state.cartNumb);
-  const [openCartModal, setOpenCartModal] = useState(false);
 
+export default function  MainNavigation () {
+  const router = useRouter();
+  const [error, setError] = useState(null);
 
-  const handleCartModal = () => {
-    setOpenCartModal(true)
+  const handleLogout = async () => {
+    setError(null);
+    try {
+      await signOut(auth);
+      toast.success('successfully logged out ')
+    } catch (err) {
+      setError(err.message);
+    }
+  router.push('/')
   }
+
+  const user = useAuth();
+  const cartnumb = useStore(state => state.cartNumb);
+
   console.log('cart number', cartnumb())
   return (
     <>
@@ -24,10 +39,14 @@ const MainNavigation = () => {
      <PageNav />
      <Logo />
       <div className="profile-nav">
-      
-        <Link href='/login'>Login</Link>
-        <Link href='/cart-page' ><img src='/cartimg.png' alt="cartimages" />{cartnumb()}</Link>
-        {/* <Link href='#'><img src='/profileimg.png' alt="cartimages" /></Link> */}
+        {
+          user ?
+          <><Link href='/cart-page'><img src='/cartimg.png' alt="cartimages" />{cartnumb()}</Link><Link href='#'><img src='/profileimg.png' alt="cartimages" /></Link>
+          <button style={{color: 'red'}} onClick={handleLogout} >logout</button>
+          </> 
+          :
+        <Link href='/login'>Login</Link> 
+        }
       </div>
     </nav>
     </div>
@@ -36,4 +55,3 @@ const MainNavigation = () => {
   )
 }   
 
-export default MainNavigation;
