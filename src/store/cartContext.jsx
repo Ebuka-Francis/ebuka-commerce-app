@@ -8,6 +8,14 @@ const useStore = create(
     (set, get) => ({
       cartItems: [],
       quauntity: 0,
+      addToQuantity: (state) =>  {
+        const { cartItems } = get();
+     const items =  [...state.cartItems];
+     const taskIndex = items.findIndex((count) => count.id === id);
+     let countNumber = items[taskIndex];
+     countNumber = {...countNumber, }
+
+      },
       addToQuantity: () => set((state) => ({quauntity: state.quauntity + 1})),
       reduceQuantity: () => set((state) => ({ quauntity: state.quauntity - 1 })),
       // setCartItems:()=>set((state)=>({cartItems:[...state.cartItems]})),
@@ -24,7 +32,7 @@ const useStore = create(
         const { cartItems } = get();
         const updatedCart = updateCart(product, cartItems);
         set({ cartItems: updatedCart });
-     toast.success('Product successfully added to cart')
+    //  toast.success('Product successfully added to cart')
       },
       deleteCart: (product) => {
         const { cartItems } = get();
@@ -48,7 +56,7 @@ function updateCart(product, cart) {
   else {
     return cart.map((item) => {
       if (item.id === product.id)
-        return { ...item, cartNumb: item.cartNumb + 1, quauntity: item.quauntity + 1};
+        return { ...item, cartNumb: item.cartNumb + 1, qauntity: item.qauntity + 1};
       return item;
     });
   }
@@ -56,15 +64,16 @@ function updateCart(product, cart) {
   return cart;
 }
 
+
 function removeCart(product, cart) {
   return cart
     .map((item) => {
       if (item.id === product.id)
-        return { ...item, cartNumb: item.cartNumb - 1 };
+        return { ...item, qauntity: item.qauntity - 1 };
       return item;
     })
     .filter((item) => {
-      return item.cartNumb;
+      return item.qauntity;
     });
 }
 export default useStore;

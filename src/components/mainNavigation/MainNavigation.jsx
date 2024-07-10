@@ -29,9 +29,9 @@ export default function  MainNavigation () {
   }
 
   const user = useAuth();
-  const cartnumb = useStore(state => state.cartNumb);
+  const cartnumb = useStore(state => state.cartItems);
 
-  console.log('cart number', cartnumb())
+  console.log('cart number',cartnumb.length )
   return (
     <>
     <div className="topnav">
@@ -41,7 +41,7 @@ export default function  MainNavigation () {
       <div className="profile-nav">
         {
           user ?
-          <><Link href='/cart-page'><img src='/cartimg.png' alt="cartimages" />{cartnumb()}</Link><Link href='#'><img src='/profileimg.png' alt="cartimages" /></Link>
+          <><Link href='/cart-page'><img src='/cartimg.png' alt="cartimages" />{cartnumb.length}</Link><Link href='#'><img src='/profileimg.png' alt="cartimages" /></Link>
           <button style={{color: 'red'}} onClick={handleLogout} >logout</button>
           </> 
           :
