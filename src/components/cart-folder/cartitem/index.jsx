@@ -8,7 +8,7 @@ export default function CartItems({ items }) {
   const deleteCart = useStore((state) => state.deleteCart);
   const addQunatity = useStore((state) => state.addToCart);
 
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   //  const handleAddToQuantity = () => {
   //   addToQuantity(items.id);
@@ -24,16 +24,8 @@ export default function CartItems({ items }) {
   //   return { productItem };
   // };
 
-  const handleIncreaseQuantity = () => {
-    const increaseItem =  items.map((item) => {
-      if(item.id === item.id){
-        item.qauntity + 1
-      }
-    }); 
-    return increaseItem;
-  }
-  console.log('items qusntity', items.qauntity)
 
+  console.log("items qusntity", items.qauntity);
 
   return (
     <div className="cart-container">

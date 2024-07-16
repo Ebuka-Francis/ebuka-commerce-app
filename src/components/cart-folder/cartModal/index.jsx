@@ -28,7 +28,7 @@ export default function CartModal({onOpen, onClose, products}) {
         />
       ))}
       </div>
-      <CartSummary/>
+      <CartSummary itemSummary={cart} />
 
     {/* </Modal> */}
     </div>

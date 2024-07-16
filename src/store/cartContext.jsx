@@ -34,11 +34,24 @@ const useStore = create(
         set({ cartItems: updatedCart });
     //  toast.success('Product successfully added to cart')
       },
-      deleteCart: (product) => {
-        const { cartItems } = get();
-        const updatedCart = removeCart(product, cartItems);
-        set({ cartItems: updatedCart });
-      },
+
+      deleteCart: (product) =>
+        set((state) => ({
+          cartItems: state.cartItems ? state.cartItems
+            .map((item) => {
+              if (item.id === product.id) {
+                return { ...item, quantity: item.quantity - 1 };
+              }
+              return item;
+            })
+            .filter((item) => item.quantity > 0):[],
+        })),
+
+      // deleteCart: (product) => {
+      //   const { cartItems } = get();
+      //   const updatedCart = removeCart(product, cartItems);
+      //   set({ cartItems: updatedCart });
+      // },
       clearAllCart: () => set({ cartItems: [] }),
     }),
     {
@@ -48,7 +61,7 @@ const useStore = create(
 );
 
 function updateCart(product, cart) {
-  const cartItem = { ...product, cartNumb: 1 };
+  const cartItem = { ...product };
 
   const productOnCart = cart.map((item) => item.id).includes(product.id);
 
@@ -56,7 +69,7 @@ function updateCart(product, cart) {
   else {
     return cart.map((item) => {
       if (item.id === product.id)
-        return { ...item, cartNumb: item.cartNumb + 1, qauntity: item.qauntity + 1};
+        return { ...item,  qauntity: item.qauntity + 1};
       return item;
     });
   }
@@ -65,15 +78,27 @@ function updateCart(product, cart) {
 }
 
 
+// function removeCart(product, cart) {
+//   return cart
+//     .map((item) => {
+//       if (item.id === product.id)
+//         return { ...item, qauntity: item.qauntity - 1 };
+//       return item;
+//     })
+//     .filter((item) => {
+//       return item.qauntity;
+//     });
+// }
+
 function removeCart(product, cart) {
   return cart
     .map((item) => {
-      if (item.id === product.id)
-        return { ...item, qauntity: item.qauntity - 1 };
+      if (item.id === product.id) {
+        return { ...item, quantity: item.quantity - 1 };
+      }
       return item;
     })
-    .filter((item) => {
-      return item.qauntity;
-    });
+    .filter((item) => item.quantity > 0 ); // Ensuring only items with quantity > 0 are kept
 }
+
 export default useStore;

@@ -24,7 +24,7 @@ export default function EmailPasswordSignup() {
     e.preventDefault();
     setError(null);
     try {
-        userCredentials = await createUserWithEmailAndPassword(auth, email, password);
+       const userCredentials = await createUserWithEmailAndPassword(auth, email, password);
       setUser(userCredentials.user)
       toast.success("Successfully loggedin!");
       router.push('/')
@@ -56,6 +56,7 @@ export default function EmailPasswordSignup() {
       <Input
         label="Password"
         type="password"
+        value={password}
         htmlfor="userpassword"
         inputClass="confirm-pass"
         onChange={(e) => setPassword(e.target.value)}
