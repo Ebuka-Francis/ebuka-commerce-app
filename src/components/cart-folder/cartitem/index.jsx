@@ -24,6 +24,10 @@ export default function CartItems({ items }) {
   //   return { productItem };
   // };
 
+  const reduceQuantity = () => {
+    return items.map((item) => item.qauntity -1)
+  }
+
 
   console.log("items qusntity", items.qauntity);
 

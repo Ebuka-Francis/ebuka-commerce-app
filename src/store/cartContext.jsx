@@ -35,23 +35,23 @@ const useStore = create(
     //  toast.success('Product successfully added to cart')
       },
 
-      deleteCart: (product) =>
-        set((state) => ({
-          cartItems: state.cartItems ? state.cartItems
-            .map((item) => {
-              if (item.id === product.id) {
-                return { ...item, quantity: item.quantity - 1 };
-              }
-              return item;
-            })
-            .filter((item) => item.quantity > 0):[],
-        })),
+      // deleteCart: (product) =>
+      //   set((state) => ({
+      //     cartItems: state.cartItems ? state.cartItems
+      //       .map((item) => {
+      //         if (item.id === product.id) {
+      //           return { ...item, quantity: item.quantity - 1 };
+      //         }
+      //         return item;
+      //       })
+      //       .filter((item) => item.quantity > 0):[],
+      //   })),
 
-      // deleteCart: (product) => {
-      //   const { cartItems } = get();
-      //   const updatedCart = removeCart(product, cartItems);
-      //   set({ cartItems: updatedCart });
-      // },
+      deleteCart: (product) => {
+        const { cartItems } = get();
+        const updatedCart = removeCart(product, cartItems);
+        set({ cartItems: updatedCart });
+      },
       clearAllCart: () => set({ cartItems: [] }),
     }),
     {
@@ -90,15 +90,16 @@ function updateCart(product, cart) {
 //     });
 // }
 
+
 function removeCart(product, cart) {
   return cart
     .map((item) => {
       if (item.id === product.id) {
-        return { ...item, quantity: item.quantity - 1 };
+        return { ...item, qauntity: item.qauntity - 1 };
       }
       return item;
     })
-    .filter((item) => item.quantity > 0 ); // Ensuring only items with quantity > 0 are kept
+    .filter((item) => item.qauntity > 0 ); // Ensuring only items with quantity > 0 are kept
 }
 
 export default useStore;
