@@ -60,3 +60,12 @@ img {
 .btn {
     width: 100%;
 }
+@media screen and (max-width:500px) {
+    .product-page  {
+        padding-inline: 10px;
+    }
+    .product-page h2 {
+        font-size: 25px;
+    }
+    
+}

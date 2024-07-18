@@ -15,7 +15,7 @@ export default function HeaderPage() {
       <Headerimg images='/headerimg-1.png' />
       <Headerimg images='/headerimg-2.png' />
       </div>
-      <div>
+      <div className='center-header'>
       <p>welcome to</p>
      <Logo />
      <p>Fashion</p>

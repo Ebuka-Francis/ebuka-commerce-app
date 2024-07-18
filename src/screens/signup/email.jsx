@@ -52,13 +52,13 @@ export default function EmailPasswordSignup() {
       value={email}
       onChange={(e) => setEmail(e.target.value)}
     />
-    <div className="passwords">
+    {/* <div className="passwords"> */}
       <Input
         label="Password"
         type="password"
         value={password}
         htmlfor="userpassword"
-        inputClass="confirm-pass"
+        inputClass="text-input"
         onChange={(e) => setPassword(e.target.value)}
       />
       {/* <Input
@@ -67,7 +67,7 @@ export default function EmailPasswordSignup() {
         htmlfor="confrimpassword"
         inputClass="confirm-pass"
       /> */}
-    </div>
+    {/* </div> */}
     <Input type="submit" value="Signin" inputClass="submit" />
     {error && <p style={{color: '#fff'}}>{error}</p> }
   </form>

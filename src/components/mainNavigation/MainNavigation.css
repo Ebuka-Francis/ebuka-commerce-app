@@ -53,3 +53,15 @@ nav {
 
 
 }
+@media screen and (max-width:500px) {
+    .profile-nav {
+        padding-right: 0px;
+        gap:5px;
+    }
+    .profilelink {
+        display: none;
+    }
+    .nav-one {
+        gap: 12px;
+    }
+}

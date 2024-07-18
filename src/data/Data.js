@@ -185,4 +185,3 @@ export const PRODUCTSGEN = [
     }
 ]
 
-{/* <Link href='#'><img src='/profileimg.png' alt="cartimages" /></Link> */}

@@ -41,7 +41,8 @@ export default function  MainNavigation () {
       <div className="profile-nav">
         {
           user ?
-          <><Link href='/cart-page'><img src='/cartimg.png' alt="cartimages" />{cartnumb.length}</Link><Link href='#'><img src='/profileimg.png' alt="cartimages" /></Link>
+          <><Link href='/cart-page'><img src='/cartimg.png' alt="cartimages" />{cartnumb.length}
+          </Link><Link className="profilelink" href='#'><img src='/profileimg.png' alt="cartimages" /></Link>
           <button style={{color: 'red'}} onClick={handleLogout} >logout</button>
           </> 
           :

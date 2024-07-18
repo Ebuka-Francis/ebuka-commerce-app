@@ -38,3 +38,16 @@
 /* .cancel-btn {
     height: ;
 } */
+
+ @media screen and (max-width:1000px) {
+    .modals {
+        width: 95%;
+        padding: 10px;
+    }
+ }
+ @media screen and (max-width:450px) {
+    .modals {
+        width: 91%;
+    }
+    
+ }
