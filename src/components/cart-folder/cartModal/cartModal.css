@@ -14,3 +14,18 @@
   background-color: #9898980D;
   color: #fff;
 }
+
+@media screen and (max-width:800px) {
+  .cart-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cart-container h3 {
+    padding: 5px;
+  }
+  .carts {
+    width: 90%;
+    padding: 10px;
+  }
+  
+}

@@ -36,7 +36,7 @@ export default function LoginPage() {
 
   return (
     <div className="signup-style">
-      <Logo />
+      {/* <Logo /> */}
       <h1>Log in</h1>
       <form onSubmit={handleLogin}>
         <Input

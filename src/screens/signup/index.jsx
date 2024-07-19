@@ -60,7 +60,7 @@ export default function SignupPage() {
 
   return (
     <div className="signup-style">
-      <Logo />
+      {/* <Logo /> */}
       <h1>Sign up</h1>
       <EmailPasswordSignup />
       <div className="form-border">

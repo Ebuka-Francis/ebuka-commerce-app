@@ -24,6 +24,10 @@ label {
     max-width: 400px;
     margin-inline: auto;
     gap: 20px;
+    padding-inline: 20px;
+    padding-inline: 10px;
+    align-items: center;
+    overflow-x: hidden;
 }
 .text-input {
     width: 100%;

@@ -61,3 +61,12 @@ p {
 .increase-quantity p {
     font-size: 25px;
 }
+@media screen and (max-width:500px) {
+    .cart-grup p {
+        font-size: 15px;
+    }
+    .cart-image {
+        align-items: center;
+    }
+    
+}
