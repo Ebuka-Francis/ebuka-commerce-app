@@ -27,6 +27,7 @@ export default function CartModal({onOpen, onClose, products}) {
        items={item}
         />
       ))}
+      {cart.length === 0? <p>Cart is empty</p> : '' }
       </div>
       <CartSummary itemSummary={cart} />
 

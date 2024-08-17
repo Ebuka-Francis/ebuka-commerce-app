@@ -2,10 +2,13 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import toast from "react-hot-toast";
+import { collection, addDoc, setDoc, doc } from "firebase/firestore";
+import { db } from "@/services/firebase";
 
 const useStore = create(
   persist(
     (set, get) => ({
+      
       cartItems: [],
       quauntity: 0,
       addToQuantity: (state) =>  {
@@ -35,17 +38,33 @@ const useStore = create(
     //  toast.success('Product successfully added to cart')
       },
 
-      // deleteCart: (product) =>
-      //   set((state) => ({
-      //     cartItems: state.cartItems ? state.cartItems
-      //       .map((item) => {
-      //         if (item.id === product.id) {
-      //           return { ...item, quantity: item.quantity - 1 };
-      //         }
-      //         return item;
-      //       })
-      //       .filter((item) => item.quantity > 0):[],
-      //   })),
+
+    //   saveCartItem: async () => {
+    //     const {cartItems} = useStore.getState();
+    //     try {
+    //         const docRef = await addDoc(collection(db, 'cartItems'), {
+    //             items: cartItems  // Save the entire array of items as one document
+    //         });
+    //         set((state) => ({
+    //             cartItems: [...state.cartItems, ...cartItems.map(item => ({ ...item, docId: docRef.id }))]
+    //         }));
+    //         console.log('Document written with ID: ', docRef.id);
+    //     } catch (e) {
+    //         console.error('Error adding document: ', e);
+    //     }
+    // },
+    saveCartItem: async () => {
+      const { cartItems } = useStore.getState();
+      try {
+          const docRef = await addDoc(collection(db, 'cartItems'), {
+              items: cartItems  // Save the entire array of items as one document
+          });
+          console.log('Document written with ID: ', docRef.id);
+      } catch (e) {
+          console.error('Error adding document: ', e);
+      }
+  },
+
 
       deleteCart: (product) => {
         const { cartItems } = get();
@@ -78,17 +97,6 @@ function updateCart(product, cart) {
 }
 
 
-// function removeCart(product, cart) {
-//   return cart
-//     .map((item) => {
-//       if (item.id === product.id)
-//         return { ...item, qauntity: item.qauntity - 1 };
-//       return item;
-//     })
-//     .filter((item) => {
-//       return item.qauntity;
-//     });
-// }
 
 
 function removeCart(product, cart) {
