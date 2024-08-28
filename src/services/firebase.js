@@ -7,6 +7,8 @@ import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 import "firebase/auth";
 import "firebase/firestore";
 
+
+
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -39,6 +41,16 @@ getDocs(colRef).then((snapshot) => {
 }).catch(err => {
     console.log(err.message)
 })
+
+// getAuth()
+//   .getUserByEmail()
+//   .then((userRecord) => {
+//     // See the UserRecord reference doc for the contents of userRecord.
+//     console.log(`Successfully fetched user data: ${userRecord.toJSON()}`);
+//   })
+//   .catch((error) => {
+//     console.log('Error fetching user data:', error);
+//   });
 
 // export const handleAddDatas = () => {
 //     addDoc(colRef, {

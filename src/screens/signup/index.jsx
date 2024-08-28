@@ -21,6 +21,7 @@ export default function SignupPage() {
   const Router = useRouter();
 
   const [authorizing, setAuthorizing] = useState(false);
+  // const [users, setUser] = useState(null)
 
   const handleLogout = async () => {
      await signOut(auth)
@@ -46,7 +47,10 @@ export default function SignupPage() {
 
       const { user, credentials } = result;
 
-      console.log({ user, credentials });
+  
+      console.log({ user, credentials});
+      // setUser(credentials.displayName);
+      // console.log(users)
       toast.success("Successfully loggedin!");
       Router.push('/');
     } catch (error) {

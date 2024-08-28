@@ -10,10 +10,14 @@ import { auth } from "@/services/firebase";
 import toast from "react-hot-toast";
 import { signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
+import { userDetails } from "@/auth";
+import { useAuths } from "@/auths";
+
 
 
 
 export default function  MainNavigation () {
+  const { currentUser, loginWithGoogle, logout} = useAuths();
   const router = useRouter();
   const [error, setError] = useState(null);
 
@@ -43,7 +47,13 @@ export default function  MainNavigation () {
           user ?
           <><Link href='/cart-page'><img src='/cartimg.png' alt="cartimages" />{cartnumb.length}
           </Link><Link className="profilelink" href='#'><img src='/profileimg.png' alt="cartimages" /></Link>
-          <button style={{color: 'red'}} onClick={handleLogout} >logout</button>
+          <div className="profile-details">
+          <p sx={{color: 'white'}} > 
+          {currentUser.displayName}
+          </p>
+          <button style={{color: 'red', width: '100%'}} onClick={handleLogout} >logout</button>
+          </div>
+        
           </> 
           :
         <Link href='/login'>Login</Link> 
